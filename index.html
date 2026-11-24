@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Greg's List — Dad's field manual</title>
+  <meta name="description" content="Greg's List helps homeowners figure out a project: do it, split it with a helper, or hire the whole thing. A funnier field manual for dads with a ladder and a question.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,560;0,9..144,700;1,9..144,560&family=IBM+Plex+Mono:wght@500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23171410'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Impact,sans-serif' font-size='36' fill='%23f0c14e'%3EG%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css?v=9">
+</head>
+<body>
+  <a class="skip" href="#ask-input">Skip to the question</a>
+  <div class="hazard" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="brand" href="#/" id="brand-link">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>
+          <span class="brand-name">Greg's List</span>
+          <span class="brand-sub">Not Angie's. Greg owns a ladder.</span>
+        </span>
+      </a>
+      <p class="mast-kicker">Field manual <span id="issue-date"></span></p>
+      <button class="bench-btn" type="button" id="open-bench">
+        The bench <span id="bench-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="home" id="home">
+      <div class="hero">
+        <p class="eyebrow">Should you really spend the time</p>
+        <h1>Point at the <em>problem.</em></h1>
+        <p class="lede">Ask this before you buy a single thing. If it does not go perfectly, especially on a bigger job, a one-weekend project becomes a half-finished mess for a month or two. That is when your wife is pissed.</p>
+        <ul class="modes">
+          <li><span>01</span><div><strong>DIY Guide +<br>Materials Needed</strong><p>Put in the work and spend your Saturday sweatin.</p><p>You buy the materials and do all the work yourself.</p><ul class="tradeoff"><li>Sweat on a Saturday</li><li>Half done for 1–2 months if anything goes wrong</li><li>Your wife is pissed</li></ul></div></li>
+          <li><span>02</span><div><strong>Split it</strong><p>You hire a helper.</p><p>The part that would stall the job for two months is theirs.</p></div></li>
+          <li><span>03</span><div><strong>Call a guy</strong><p>They do it all.</p><p>It stays a weekend. You are not living in the job site.</p></div></li>
+        </ul>
+
+        <form class="ask" id="ask-form">
+          <label for="ask-input">Describe the job, the symptom, or the quote that offended you</label>
+          <div class="ask-row">
+            <input id="ask-input" name="q" autocomplete="off" placeholder="The deck's soft, the toilet rocks, the fence quote felt personal…">
+            <button class="go" type="submit">Get the read</button>
+          </div>
+          <p class="suggest" id="suggest" hidden></p>
+        </form>
+
+        <div class="chips" id="chips" aria-label="Common disasters"></div>
+      </div>
+
+      <section class="board-wrap" aria-labelledby="board-title">
+        <div class="board-head">
+          <h2 id="board-title">The board</h2>
+          <div class="filters" id="filters" role="group" aria-label="Filter jobs"></div>
+        </div>
+        <div class="board" id="board"></div>
+      </section>
+      <p class="fine-print">Greg is a composite of every guy who has said "how hard can it be," not a licensed contractor. Gas, roofs, structure, and anything that can fall on a person get treated that way on purpose. Prices are US ballparks, and your zip code has opinions.</p>
+    </section>
+    <section class="work" id="work" hidden></section>
+  </main>
+
+  <footer class="colophon">
+    <p>Greg's List — the homeowner's field manual. Angie has reviews. Greg has opinions, a tape measure, and a strong sense of when to put the tool down.</p>
+  </footer>
+
+  <dialog class="bench-dialog" id="bench-dialog" aria-labelledby="bench-title">
+    <form method="dialog" class="bench-card">
+      <header class="bench-head">
+        <h2 id="bench-title">On the bench</h2>
+        <button class="text-btn" value="close">Close</button>
+      </header>
+      <div id="bench-body"></div>
+    </form>
+  </dialog>
+
+  <script src="js/projects.js?v=4"></script>
+  <script src="js/app.js?v=9"></script>
+</body>
+</html>
